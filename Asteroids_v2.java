@@ -163,7 +163,11 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 	private Graphics2D imageTrippyGraphics2;
 	/** Marks the current active buffer. Flips every frame. */
 	private boolean currentActiveTrippyBufffer = false;
-	//TODO Engine: Create variables to save CPU by clearing the trippy buffer's erased pixel data
+	/* TODO Engine: Create variables to save CPU by clearing the trippy buffer's erased pixel data
+	 * First make flag that turns off after 3 seconds. When it turns off, clear the trippy buffers
+	 * Make if statements to only render trippy buffer if this flag is on. 
+	 * Make anything that draws to the trippyBuffer call this flag 
+	 */
 	
 	/* Regular variables. I HAD to make some of them static, but they notice they are still private. 
 	 * I used the next best thing to public-statics: private statics with only "get" accessor methods! */
@@ -584,9 +588,6 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 		}
 	}
 	private void FloaterPaint(Graphics2D g, Graphics2D trippyG){
-		/* Declare new list to keep track of what has been drawn already 
-		 * EDIT: Became unnecessary when I changed canCollideWithEachOther to GoodGuys/BadGuys */
-//		LinkedList<Floater> beenDrawn = new LinkedList<Floater>();
 		
 		synchronized (Particles) {
 			ListIterator<Particle> iterator3 = Particles.listIterator();
@@ -595,25 +596,23 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 				particle.draw(g);
 			}
 		}
-		//TODO Only make it so that certain floaters get drawn on the trippy buffer 
 		synchronized (GoodGuys) {
 			ListIterator<Floater> iterator1 = GoodGuys.listIterator();
 			while (iterator1.hasNext()) {
 				Floater floater = iterator1.next();
-//				if (beenDrawn.contains(floater) == false) {
-//					beenDrawn.add(floater);
+				/* Draw certain floaters to the trippy buffer and the rest to the regular buffer. */
+				if(floater instanceof Bullet || floater instanceof Shockwave){
 					floater.draw(trippyG);
-//				}
+				} else {
+					floater.draw(g);
+				}
 			}
 		}
 		synchronized (BadGuys) {
 			ListIterator<Floater> iterator2 = BadGuys.listIterator();
 			while (iterator2.hasNext()) {
 				Floater floater = iterator2.next();
-//				if (beenDrawn.contains(floater) == false) {
-//					beenDrawn.add(floater);
-					floater.draw(g);
-//				}
+				floater.draw(g);
 			}
 		}
 	}
