@@ -219,15 +219,15 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 		addMouseListener(this);
 		addMouseMotionListener(this);
 		/* Double buffering */
-		image = new BufferedImage(APPLET_X, APPLET_Y, BufferedImage.TRANSLUCENT );
+		image = new BufferedImage(APPLET_X, APPLET_Y, BufferedImage.TYPE_4BYTE_ABGR  );
 		offscreen = image.createGraphics();
-		imageTrippy1 = new BufferedImage(APPLET_X, APPLET_Y, BufferedImage.TRANSLUCENT );
+		imageTrippy1 = new BufferedImage(APPLET_X, APPLET_Y, BufferedImage.TYPE_4BYTE_ABGR  );
 		imageTrippyGraphics1 = imageTrippy1.createGraphics();
-		imageTrippy2 = new BufferedImage(APPLET_X, APPLET_Y, BufferedImage.TRANSLUCENT );
+		imageTrippy2 = new BufferedImage(APPLET_X, APPLET_Y, BufferedImage.TYPE_4BYTE_ABGR  );
 		imageTrippyGraphics2 = imageTrippy2.createGraphics();
 		
 		/* Post-processing*/
-		imagePost = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TRANSLUCENT);
+		imagePost = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_4BYTE_ABGR );
 		
 		/* Variable declarations */
 		Stars = new LinkedList<Star>();
@@ -277,7 +277,7 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 		
 		/* Options map and dialog box. The listener for the dialog box is in this class. */
 		options = new LinkedHashMap<String, Option>();
-		options.put("Friction", new Option("Enable friction breaks", true, "Patented frictional break technologyª makes you slow down over time even though there is nothing around you! It makes it easier to steer the ship."));
+		options.put("Friction", new Option("Enable friction breaks", true, "Patented FrictionBreakª technology makes you slow down over time even though there is nothing around you! It makes it easier to steer the ship."));
 		options.put("Precision firing", new Option("Precision firing", false, "Specifies whether bullets fired from the keyboard come out in the same direction each time instead of a 10° shower."));
 		options.put("Anti-aliasing", new Option("Enable anti-aliasing", false, "Blends pixels into each other to make for less jagged picture. Large performance penalty, but the game will look prettier!"));
 		options.put("Pause on focus loss", new Option("Pause on focus loss", true, "Disable this if you do not want the game to pause every time you click on a different window or out of the applet."));
