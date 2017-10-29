@@ -131,7 +131,6 @@ import javax.swing.event.MouseInputListener;
 
 import org.jdesktop.animation.timing.Animator;
 
-import com.jhlabs.image.InvertFilter;
 
 /**
  * 	TODO Fix weapon timer for homing missile
@@ -277,8 +276,8 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 		
 		/* Options map and dialog box. The listener for the dialog box is in this class. */
 		options = new LinkedHashMap<String, Option>();
-		options.put("Friction", new Option("Enable friction breaks", true, "Patented FrictionBreakª technology makes you slow down over time even though there is nothing around you! It makes it easier to steer the ship."));
-		options.put("Precision firing", new Option("Precision firing", false, "Specifies whether bullets fired from the keyboard come out in the same direction each time instead of a 10° shower."));
+		options.put("Friction", new Option("Enable friction breaks", true, "Patented FrictionBreakï¿½ technology makes you slow down over time even though there is nothing around you! It makes it easier to steer the ship."));
+		options.put("Precision firing", new Option("Precision firing", false, "Specifies whether bullets fired from the keyboard come out in the same direction each time instead of a 10ï¿½ shower."));
 		options.put("Anti-aliasing", new Option("Enable anti-aliasing", false, "Blends pixels into each other to make for less jagged picture. Large performance penalty, but the game will look prettier!"));
 		options.put("Pause on focus loss", new Option("Pause on focus loss", true, "Disable this if you do not want the game to pause every time you click on a different window or out of the applet."));
 		optionsSelector = null; /* initialized in initIntro() */

@@ -14,13 +14,6 @@ import javax.swing.Timer;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
 
-import com.jhlabs.image.BlurFilter;
-import com.jhlabs.image.BoxBlurFilter;
-import com.jhlabs.image.GaussianFilter;
-import com.jhlabs.image.MaskFilter;
-import com.jhlabs.image.RGBAdjustFilter;
-
-
 public class Bomb extends Floater implements  TimingTarget{
 	final static int FUSE_TIME = 250;
 	final static int EXPLOSION_TIME = 100;
