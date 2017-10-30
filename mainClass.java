@@ -14,6 +14,7 @@ public class mainClass {
 	    myApplet.start();
 	    /* add applet to the frame */
 	    myFrame.add(myApplet, BorderLayout.CENTER);
+	    myFrame.setPreferredSize(new Dimension(Asteroids_v2.APPLET_X , Asteroids_v2.APPLET_Y));
 	    myFrame.pack(); /* set window to appropriate size (for its elements) */
 	    myFrame.setVisible(true); /* usual step to make frame visible */
 
