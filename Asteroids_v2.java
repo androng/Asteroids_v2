@@ -131,7 +131,6 @@ import javax.swing.event.MouseInputListener;
 
 import org.jdesktop.animation.timing.Animator;
 
-
 /**
  * 	TODO Fix weapon timer for homing missile
  */
@@ -506,8 +505,8 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 		BadGuys.removeAll(BadGuys);
 		
 		/* Add asteroids */
-		for(int nIndex = 0; nIndex < 90; nIndex++){
-			BadGuys.add(new Asteroid(5));
+		for(int nIndex = 0; nIndex < 9; nIndex++){
+			BadGuys.add(new Asteroid((int)(30 + 40 * Math.random())));
 		}
 	}
 	/** Terminates threads, restarts the game at sets it to the intro screen. */
@@ -600,8 +599,9 @@ public class Asteroids_v2 extends Applet implements KeyListener, Runnable, Focus
 			while (iterator1.hasNext()) {
 				Floater floater = iterator1.next();
 				/* Draw certain floaters to the trippy buffer and the rest to the regular buffer. */
-				if(floater instanceof Bullet || floater instanceof Shockwave){
-					floater.draw(trippyG);
+//				if(floater instanceof Bullet || floater instanceof Shockwave){
+				if(floater instanceof Shockwave){
+							floater.draw(trippyG);
 				} else {
 					floater.draw(g);
 				}
