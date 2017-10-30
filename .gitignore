@@ -1,1 +1,5 @@
 Asteroids_v2.iml
+*.class
+.idea
+.settings
+.project

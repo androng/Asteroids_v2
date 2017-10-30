@@ -1,0 +1,55 @@
+Reinforcements outline:
+
+Request help - send radio wave (activate)
+Start timer with listener: 
+	If threat is too low, deny. (deactivate)
+	Else, (activate)
+Initialize ships of different color
+Teleport in ships
+Once they are in, turn loop on
+Start the timer for departure with listener:
+	Send message to HUD something like "Squad 4 requested in sector 40"
+	(deactivate)
+
+Loop:
+	For each ship:
+		If ship is in visible area
+			If more than 20 floaters
+				If "less than 20 floaters boolean" is false (consistent)
+					Rotate around ship shooting bullets and lasers
+				Else, ("less than 20 floaters boolean" is true) (inconsistent)
+					If "retract" timer is not running
+						Retract into the ring, when done
+							Set "less than 20 floaters boolean" to false
+						If individual "bounty" timers are on
+							turn them all off
+
+			Else (less than 20 floaters)
+				If "less than 20 floaters boolean" is false (inconsistent)
+					If this is the last ship in the group
+						Set "less than 20 floaters boolean" to true
+					If there are any bad guys 
+						Start all ship timers
+						Assign each ship a target
+					If "retract" timer is on,
+						turn it off
+					
+-				If no bad guys left
+-					Turn loop off
+-					Teleport away to offscreen point
+-					Once they are out, 
+-						set them all to be removed. 
+-						(deactivate)
+					
+				if there is a target  
+					if target is dead
+						Cancel timer
+						Remove target from ShipTargets
+						If there are still targets to destroy
+							Select one
+							Start timer
+					Else
+						if status is "accelerating"
+							Accelerate toward target
+						else if status is "firing"
+							Fire weapon
