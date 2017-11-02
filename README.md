@@ -1,9 +1,13 @@
 # Asteroids_v2
+
 A spin from the Atari Asteroids game from 1979, but with more weapons. I didn't program in death so anyone playing has to use cheat codes to add more enemies. 
 
 This is a rewrite of my original assignment from Mr. Simon's AP Computer Science class. https://github.com/APCSLowell/AsteroidsGame
 
 
+[![Java Asteroids Demo](https://img.youtube.com/vi/qiRtD9vJ2K8/0.jpg)](https://www.youtube.com/watch?v=qiRtD9vJ2K8)
+
+Demo here: https://youtu.be/qiRtD9vJ2K8
 
 ## Features 
 * Decked out ship with laser, repellant, chain lightning and zero laser.
